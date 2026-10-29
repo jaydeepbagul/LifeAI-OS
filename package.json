@@ -1,0 +1,28 @@
+{
+  "name": "lifeai-os",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node download-server.js",
+    "serve:mobile": "node download-server.js",
+    "sync": "npx cap sync",
+    "open:android": "npx cap open android",
+    "build:apk": "npx cap sync && powershell -Command \"$env:JAVA_HOME='C:\\Program Files\\Android\\Android Studio\\jbr'; cd android; .\\gradlew assembleRelease\"",
+    "build:aab": "npx cap sync && powershell -Command \"$env:JAVA_HOME='C:\\Program Files\\Android\\Android Studio\\jbr'; cd android; .\\gradlew bundleRelease\"",
+    "build:all": "npx cap sync && powershell -Command \"$env:JAVA_HOME='C:\\Program Files\\Android\\Android Studio\\jbr'; cd android; .\\gradlew bundleRelease assembleRelease\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/network": "^8.0.1",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4"
+  }
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download LifeAI OS for Android</title>
+  <meta name="description" content="Download the official LifeAI OS native Android application. AI-powered life operating system.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 24, 38, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.35);
+      --accent: #6366f1;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background lighting */
+    .glow-top {
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 40px 28px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      text-align: center;
+    }
+
+    .app-icon {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 20px auto;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+      border: 1.5px solid rgba(129, 140, 248, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
+      position: relative;
+    }
+
+    .app-icon svg {
+      width: 56px;
+      height: 56px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #38bdf8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .download-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .meta-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    .download-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(2, 132, 199, 0.45);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: none;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(2, 132, 199, 0.6);
+    }
+
+    .download-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* QR Code for Desktop Viewers */
+    .qr-section {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .qr-box {
+      width: 76px;
+      height: 76px;
+      background: white;
+      border-radius: 12px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-box img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .qr-text {
+      text-align: left;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .qr-text strong {
+      color: #e2e8f0;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Steps Section */
+    .steps-container {
+      text-align: left;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .steps-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--text-muted);
+    }
+
+    .step-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-text strong {
+      color: #f1f5f9;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-top"></div>
+
+  <div class="container">
+    <!-- App Icon -->
+    <div class="app-icon">
+      <svg viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Neural Brain Core -->
+        <path d="M51 37C46.5 37 43 39.5 42 43C39.5 43.5 37.5 45.8 37.5 48.5C37.5 49.2 37.7 49.9 38 50.5C36.8 51.8 36 53.5 36 55.5C36 58.2 37.5 60.5 39.8 61.5C40 63.5 41.5 65.2 43.5 66C44.5 68.5 47.5 70 51 70L51 37Z" stroke="#38bdf8" stroke-width="2.5" fill="rgba(56, 189, 248, 0.2)"/>
+        <path d="M57 37C61.5 37 65 39.5 66 43C68.5 43.5 70.5 45.8 70.5 48.5C70.5 49.2 70.3 49.9 70 50.5C71.2 51.8 72 53.5 72 55.5C72 58.2 70.5 60.5 68.2 61.5C68 63.5 66.5 65.2 64.5 66C63.5 68.5 60.5 70 57 70L57 37Z" stroke="#c084fc" stroke-width="2.5" fill="rgba(192, 132, 252, 0.2)"/>
+        <path d="M54 35L54 72" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="43" cy="46" r="2" fill="#38bdf8"/>
+        <circle cx="41" cy="54" r="2" fill="#38bdf8"/>
+        <circle cx="44" cy="62" r="2" fill="#38bdf8"/>
+        <circle cx="65" cy="46" r="2" fill="#c084fc"/>
+        <circle cx="67" cy="54" r="2" fill="#c084fc"/>
+        <circle cx="64" cy="62" r="2" fill="#c084fc"/>
+      </svg>
+    </div>
+
+    <!-- Badge -->
+    <div class="badge">
+      <span class="badge-dot"></span> Official Android Release
+    </div>
+
+    <h1>LifeAI OS</h1>
+    <p class="tagline">Your intelligent life operating system. Now natively on Android with cloud sync, offline support, and smart assistant.</p>
+
+    <!-- Download Card -->
+    <div class="download-card">
+      <div class="meta-row">
+        <div class="meta-item">
+          <span class="meta-label">Version</span>
+          <span class="meta-val">1.0.0</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Size</span>
+          <span class="meta-val">3.19 MB</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Format</span>
+          <span class="meta-val">Direct APK</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Android</span>
+          <span class="meta-val">8.0+</span>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <a href="LifeAI-OS-v1.0.apk" class="download-btn" id="dl-btn" download="LifeAI-OS-v1.0.apk">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download for Android (.APK)</span>
+      </a>
+
+      <!-- Desktop QR Scan Section -->
+      <div class="qr-section" id="qr-area">
+        <div class="qr-box">
+          <img id="qr-img" src="" alt="Scan QR Code to Download">
+        </div>
+        <div class="qr-text">
+          <strong>Viewing on a Computer?</strong>
+          Scan this QR code with your phone camera to download directly.
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Installation Guide -->
+    <div class="steps-container">
+      <div class="steps-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        Quick 30-Second Install Guide
+      </div>
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">Tap <strong>Download for Android</strong> above.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">Open the downloaded <strong>LifeAI-OS-v1.0.apk</strong> file from notifications.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text">If prompted, tap <strong>Settings</strong> ➔ toggle <strong>"Allow from this source"</strong> ➔ tap <strong>Install</strong>.</div>
+      </div>
+    </div>
+
+    <footer>
+      Protected with SHA-256 Release Signature • Verified Package: com.lifeai.os
+    </footer>
+  </div>
+
+  <script>
+    // Generate dynamic QR code pointing to current APK URL
+    const apkUrl = new URL('LifeAI-OS-v1.0.apk', window.location.href).href;
+    const qrImg = document.getElementById('qr-img');
+    qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + encodeURIComponent(apkUrl);
+
+    // If already on mobile Android, hide QR code and expand button
+    if (/Android/i.test(navigator.userAgent)) {
+      document.getElementById('qr-area').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

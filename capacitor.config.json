@@ -1,0 +1,37 @@
+{
+  "appId": "com.lifeai.os",
+  "appName": "LifeAI OS",
+  "webDir": "www",
+  "server": {
+    "url": "https://life-connecte-port.apper.so",
+    "cleartext": false,
+    "allowNavigation": [
+      "life-connecte-port.apper.so",
+      "*.apper.so",
+      "*.apper.io",
+      "cdn.apper.io",
+      "platform.apper.io",
+      "static.cloudflareinsights.com"
+    ]
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "launchAutoHide": true,
+      "backgroundColor": "#0f172a",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "overlaysWebView": false,
+      "style": "DARK",
+      "backgroundColor": "#0f172a"
+    }
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  }
+}
